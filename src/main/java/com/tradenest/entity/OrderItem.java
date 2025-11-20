@@ -9,7 +9,11 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderItem {
     @Id
     @GeneratedValue
