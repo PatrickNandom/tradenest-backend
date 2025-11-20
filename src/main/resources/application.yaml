@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: tradenest
+
+  datasource:
+    url: jdbc:mysql://localhost:5000/trade_nest_db
+    username: root
+    password: patrick5522
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
