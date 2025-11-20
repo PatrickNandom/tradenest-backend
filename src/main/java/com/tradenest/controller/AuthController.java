@@ -63,7 +63,6 @@ public class AuthController {
                 .id(user.getId())
                 .roles(user.getRoles())
                 .build();
-
         return ResponseEntity.ok(response);
     }
 

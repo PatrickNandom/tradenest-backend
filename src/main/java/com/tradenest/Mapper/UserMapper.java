@@ -22,7 +22,6 @@ public class UserMapper {
                 .username(dto.getUsername())
                 .email(dto.getEmail())
                 .passwordHash(dto.getPasswordHash())
-                .roles(dto.getRoles())
                 .build();
     }
 }

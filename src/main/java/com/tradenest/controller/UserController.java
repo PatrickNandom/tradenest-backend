@@ -18,13 +18,13 @@ import java.util.stream.Collectors;
 
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/v1/users")
 public class UserController {
 
     private final UserService userService;
 
     @GetMapping
-    @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole('ADMIN')")
     public List<UserResponseDto> getAllUsers() {
         return userService.findAllUsers().stream()
                 .map(UserMapper::toDto)
@@ -32,14 +32,14 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('Admin') or #id.toString() == authentication.name")
+    @PreAuthorize("hasRole('ADMIN') or #id.toString() == authentication.name")
     public UserResponseDto getUserById(@PathVariable UUID id) {
         User user = userService.findUserById(id);
         return UserMapper.toDto(user);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("#id.toString() == authentication.name")
+//    @PreAuthorize("#id.toString() == authentication.name")
     public UserResponseDto updateUser(@PathVariable UUID id, @RequestBody @Valid UserUpdateDto updateDto) {
         User userToUpdate = UserMapper.fromUpdateDto(updateDto);
         User updatedUser = userService.updateUser(id, userToUpdate);

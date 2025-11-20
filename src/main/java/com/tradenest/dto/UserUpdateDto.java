@@ -19,12 +19,8 @@ public class UserUpdateDto {
     @Size(min = 3, max = 50)
     private String username;
 
-    @NotBlank(message = "Email cannot be blank")
     @Email(message = "Email must be valid")
     private String email;
 
-    @NotBlank(message = "Password cannot be blank")
     private String passwordHash;
-
-    private List<Role> roles;
 }
