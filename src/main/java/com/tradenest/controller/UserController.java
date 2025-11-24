@@ -7,8 +7,10 @@ import com.tradenest.entity.User;
 import com.tradenest.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.UUID;
@@ -39,10 +41,21 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-//    @PreAuthorize("#id.toString() == authentication.name")
     public UserResponseDto updateUser(@PathVariable UUID id, @RequestBody @Valid UserUpdateDto updateDto) {
         User userToUpdate = UserMapper.fromUpdateDto(updateDto);
         User updatedUser = userService.updateUser(id, userToUpdate);
         return UserMapper.toDto(updatedUser);
+    }
+
+    @PatchMapping("/upload/{id}")
+    public ResponseEntity<String> uploadProfileImage(@PathVariable UUID id,
+                                                     @RequestPart("file") MultipartFile file
+    ) {
+        if (file.isEmpty()) {
+            return ResponseEntity.badRequest().body("File is empty");
+        }
+
+        String url = userService.uploadProfileImage(id, file);
+        return ResponseEntity.ok(url);
     }
 }

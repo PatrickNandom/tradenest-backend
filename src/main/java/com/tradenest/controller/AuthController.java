@@ -7,6 +7,7 @@ import com.tradenest.entity.User;
 import com.tradenest.service.AuthService;
 import com.tradenest.service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,7 @@ public class AuthController {
 
         String token = authService.register(user);
 
-        return ResponseEntity.ok(
+        return ResponseEntity.status(HttpStatus.CREATED).body(
                 AuthResponseDto.builder()
                         .token(token)
                         .username(user.getUsername())
@@ -49,13 +50,11 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDto> login(@RequestBody @Valid RegisterRequestDto request) {
-        // authenticate and get token
+
         String token = authService.authenticate(request.getUsername(), request.getPassword());
 
-        // fetch the user info from DB by username
         User user = userService.findUserByUsername(request.getUsername());
 
-        // build and return response DTO
         AuthResponseDto response = AuthResponseDto.builder()
                 .token(token)
                 .username(user.getUsername())

@@ -35,7 +35,6 @@ public class JwtService {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
             return true;
         } catch (JwtException e) {
-            // log token validation errors if needed
             return false;
         }
     }

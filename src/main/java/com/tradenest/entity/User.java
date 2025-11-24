@@ -42,7 +42,9 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String passwordHash;
 
-//    @NotEmpty(message = "User must have at least one role")
+
+    private String imageUri;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))

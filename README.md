@@ -1,6 +1,6 @@
 # Trade Nest - E-Commerce API
 
-Trade Nest is an e-commerce API built with JWT authentication, complex data models, and Stripe payment integration.  
+Trade Nest is an e-commerce API built with JWT authentication and Stripe payment integration.  
 It supports user authentication, product and cart management, and secure checkout — designed for scalable, real-world use.
 
 ---
@@ -31,7 +31,7 @@ It supports user authentication, product and cart management, and secure checkou
 
 - **Backend:** Java Spring Boot
 - **Authentication:** JWT (JSON Web Tokens)
-- **Database:** MySQL/PostgreSQL
+- **Database:** MySQL
 - **Payments:** Stripe API
 - **API Testing:** Postman
 
@@ -43,13 +43,13 @@ It supports user authentication, product and cart management, and secure checkou
 
 - Java 17+
 - Maven/Gradle
-- MySQL/PostgreSQL
+- MySQL
 - Stripe account and API keys
 
 ### Installation
 
 1. Clone the repository:  
-   `git clone https://github.com/yourusername/tradenest-api.git`
+   `git clone https://github.com/PatrickNandom/tradenest-backend.git`
 
 2. Configure database and Stripe credentials in your `application.properties` or environment variables.
 
@@ -102,4 +102,4 @@ MIT License © Nandom Patrick Molshakat
 
 ## Contact
 
-For questions or support, open an issue or reach out at [your.email@example.com].
+For questions or support, open an issue or reach out at [patricknandom82@gmail.com].
