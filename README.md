@@ -43,7 +43,7 @@ It supports user authentication, product and cart management, and secure checkou
 
 - Java 17+
 - Maven/Gradle
-- MySQL/PostgreSQL
+- MySQL
 - Stripe account and API keys
 
 ### Installation
