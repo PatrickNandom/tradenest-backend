@@ -24,14 +24,14 @@ It supports user authentication, product and cart management, and secure checkou
 
 - **Role-Based Access Control**  
   Separate user and admin roles with enforced authorization.
-
+- 
 ---
 
 ## Technology Stack
 
 - **Backend:** Java Spring Boot
 - **Authentication:** JWT (JSON Web Tokens)
-- **Database:** MySQL/PostgreSQL
+- **Database:** MySQL
 - **Payments:** Stripe API
 - **API Testing:** Postman
 
