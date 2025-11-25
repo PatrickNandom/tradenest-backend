@@ -51,7 +51,7 @@ It supports user authentication, product and cart management, and secure checkou
 1. Clone the repository:  
    `git clone https://github.com/PatrickNandom/tradenest-api.git`
 
-2. Configure database and Stripe credentials in your `application.properties` or environment variables.
+2. Configure database and Stripe credentials in your `application.yml` or environment variables.
 
 3. Build and run the application:  
    `./mvnw spring-boot:run` or `./gradlew bootRun`
