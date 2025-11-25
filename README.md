@@ -49,7 +49,7 @@ It supports user authentication, product and cart management, and secure checkou
 ### Installation
 
 1. Clone the repository:  
-   `git clone https://github.com/yourusername/tradenest-api.git`
+   `git clone https://github.com/PatrickNandom/tradenest-api.git`
 
 2. Configure database and Stripe credentials in your `application.properties` or environment variables.
 
@@ -102,4 +102,4 @@ MIT License © Nandom Patrick Molshakat
 
 ## Contact
 
-For questions or support, open an issue or reach out at [your.email@example.com].
+For questions or support, open an issue or reach out at [patricknandom82@gmail.com].
