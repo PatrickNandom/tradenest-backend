@@ -42,7 +42,7 @@ It supports user authentication, product and cart management, and secure checkou
 ### Prerequisites
 
 - Java 17+
-- Maven/Gradle
+- Maven
 - MySQL
 - Stripe account and API keys
 
