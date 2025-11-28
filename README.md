@@ -64,11 +64,18 @@ It supports user authentication, product and cart management, and secure checkou
   `POST /api/v1/auth/register` — Register a new user  
   `POST /api/v1/auth/login` — Login and receive JWT token
 
+- **User**  
+  `GET /api/v1/users` — Admin only: List all users  
+  `GET /api/v1/users/{id}` — Admin only: Get user by ID  
+  `PUT /api/v1/users/{id}` — Update user profile  
+  `PATCH /api/v1/users/upload/{id}` — Upload or update user profile image
+
 - **Products**  
   `GET /api/v1/products` — List and search products  
   `POST /api/v1/products` — Admin only: Add new product  
   `PUT /api/v1/products/{id}` — Admin only: Update product  
   `DELETE /api/v1/products/{id}` — Admin only: Delete product
+
 
 - **Cart**  
   `POST /api/v1/cart` — Add product to cart  
@@ -103,3 +110,4 @@ MIT License © Nandom Patrick Molshakat
 ## Contact
 
 For questions or support, open an issue or reach out at [patricknandom82@gmail.com].
+
